@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
+@theme {
+    /* Custom Colors inspired by your image */
+    --color-mint-50: #f0fdf4;
+    --color-mint-100: #dcfce7;
+    --color-mint-500: #10b981;
+    /* The primary green */
+    --color-teal-600: #0d9488;
+    /* The darker teal buttons */
+    --color-teal-700: #0f766e;
+    --color-navy-900: #0f172a;
+    /* The dark text */
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --background: #f8fafc;
+    /* Very light gray background */
+    --foreground: #0f172a;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    color: var(--foreground);
+    background: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom Utilities for the specific "Soft Card" look */
+.glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-sm;
+}
+
+.rounded-custom {
+    @apply rounded-[2rem];
+    /* The extra rounded corners from the design */
 }
